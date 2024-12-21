@@ -19,7 +19,7 @@ library(ggExtra)
 
 data <- read.csv("E:/MSC/Stat/data.csv")
 
-# Select the relevant columns for signals x1, x2, x3, x4, x5
+# The csv files has multiple columns however the required data are in column x1, x2, x3., x4, x5. Select the relevant columns for signals x1, x2, x3, x4, x5
 data_selected <- data %>% select(x1, x2, x3, x4, x5)
 
 # Display the structure of the dataset
@@ -34,8 +34,6 @@ summary(data_selected)
 # Check for NA values in the dataset
 colSums(is.na(data_selected))
 
-# Assuming there is a time or trial column in your dataset, if not, we can assume a sequence for time
-# If the dataset has a 'time' or 'trial' column, replace 'time' below with the correct column name
 data_selected$time <- 1:nrow(data_selected) # Simulating time from 1 to number of rows
 
 # Reshape the data from wide format to long format for ggplot
